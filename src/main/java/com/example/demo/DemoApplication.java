@@ -27,7 +27,7 @@ public class DemoApplication {
         return secondResult;
     }
     @RequestMapping("/")
-    public void home() {
+    public String home() {
         String[] names = {
             "Elena", "Thomas", "Hamilton", "Suzie", "Phil", "Matt", "Alex",
             "Emma", "John", "James", "Jane", "Emily", "Daniel", "Neda",
@@ -44,9 +44,10 @@ public class DemoApplication {
         }
         int fastestTime = fastest(times);
         int secondFastestTime = secondFastest(times, fastestTime);
-        System.out.println("the fastest time is "+ fastestTime);
-        System.out.println("the second fastest time is "+secondFastestTime);
-        return int[fastestTime,secondFastestTime]
+        String t1 = Integer.toString(fastestTime);
+        String t2 = Integer.toString(secondFastestTime);
+
+        return "the fastest time is " + t1 + " and the second fastest is "+ t2;
 
     }
 
